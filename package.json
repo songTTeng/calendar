@@ -1,8 +1,8 @@
 {
-  "name": "y",
+  "name": "calender",
   "version": "1.0.0",
-  "description": "y",
-  "author": "y",
+  "description": "日历",
+  "author": "527455764@qq.com",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -10,6 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "chinese-lunar-calendar": "^1.0.1",
+    "element-ui": "^2.15.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -38,6 +40,8 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "sass-loader": "^7.3.1",
+    "node-sass": "^4.0.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
