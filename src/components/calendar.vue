@@ -16,9 +16,7 @@
       </div>
     </div>
     <div class="lunar-detail-date">
-      {{ lunarDetail.lunarYear.substring(0,2) }}-【
-      {{ lunarDetail.zodiac }}】年
-      {{ lunarDetail.dateStr.substring(0,2) }}{{ lunarDetail.dateStr.substring(2,lunarDetail.dateStr.length) }}
+      {{ lunarDetail.lunarYear}} -【{{ lunarDetail.zodiac }}】年 {{ lunarDetail.dateStr}}
     </div>
     <div class="days_area">
       <div class="day week" v-for="week in weeks" :key="week">{{ week }}</div>
@@ -42,7 +40,7 @@
 </template>
 
 <script>
-import { getLunar } from 'chinese-lunar-calendar' // 处理成阴历的方法 st
+import { getLunar } from './calendarFun' // 处理成阴历的方法 st
 export default {
   name: 'Calendar',
   props: {
@@ -81,7 +79,7 @@ export default {
       //   isLeap: false   //是否闰月
       //   lunarDate: 27   //农历日期
       //   lunarMonth: 5  //农历月份
-      //   lunarYear: "辛丑年"  //农历年份，年以正月初一开始
+      //   lunarYear: "辛丑"  //农历年份，年以正月初一开始
       //   solarTerm: null  //节气，null代表没有
       //   zodiac: "牛"  //生肖，生肖以正月初一开始
       //   }
@@ -98,6 +96,7 @@ export default {
     this.month = now.getMonth() + 1
     this.today = now.getDate()
     this.getDays()
+    
   },
   methods: {
     getDays () { // 获取当前月份所有公历日期及其农历日期
